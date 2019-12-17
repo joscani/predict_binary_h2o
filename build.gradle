@@ -5,10 +5,7 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 group 'com.h2ospark'
-version '1.0.1-SNAPSHOT'
-
-
-
+version '1.0.3-SNAPSHOT'
 
 buildscript {
     repositories {
@@ -17,21 +14,15 @@ buildscript {
 
 }
 
-
 //apply plugin: 'java'
 apply plugin: 'scala'
 apply plugin: 'maven'
 
-
-
-
 repositories {
     mavenCentral()
     maven {
-        url "http://h2o-release.s3.amazonaws.com/h2o/rel-xu/4/maven/repo/"
+        url "http://h2o-release.s3.amazonaws.com/h2o/rel-yu/1/maven/repo/"
     }
-
-
 }
 
 configurations {
@@ -39,10 +30,7 @@ configurations {
     all*.exclude group: 'javax.servlet', module: 'servlet-api'
 }
 
-
-
 dependencies {
-
     compileOnly "org.scala-lang:scala-library:$scala_major.$scala_minor"
     compileOnly "org.scala-lang:scala-reflect:$scala_major.$scala_minor"
     compileOnly "org.apache.spark:spark-sql_$scala_major:$spark_version"
@@ -56,6 +44,7 @@ dependencies {
     compile "com.databricks:spark-csv_$scala_major:1.5.0"
     compile "org.scala-lang:scala-compiler:$scala_major.$scala_minor"
     compile "ai.h2o:h2o-genmodel:$h2oProjectVersion"
+    compile "ai.h2o:h2o-genmodel-ext-xgboost:$h2oProjectVersion"
 
     compileOnly 'com.esotericsoftware.kryo:kryo:2.21'
 
@@ -75,7 +64,6 @@ jar {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
-
 
 
 //run scala tests. These are not automatically picked up by gradle,

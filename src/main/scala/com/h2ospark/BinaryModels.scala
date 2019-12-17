@@ -55,8 +55,8 @@ object BinaryModels {
     }.toDF("columna1","predict")
 
     // Print Schema and show datos
-    dfScore.printSchema
-    dfScore.show()
+    //dfScore.printSchema
+    //dfScore.show()
 
     // Save in a specific table
     dfScore.write.mode(SaveMode.Overwrite).saveAsTable(tableOut)

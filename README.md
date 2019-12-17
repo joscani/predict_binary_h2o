@@ -10,7 +10,7 @@ El jar generado vale para los modelos de clasificación binaria de h2o
 
 Ejemplo con 10 ejecutores (+ 1 para del driver), 5 cores por ejecutor, y 10GB por ejecutor. Los argumentos que se le deben pasar son el path del modelo mojo entrenado, el nombre de la tabla dónde se va a aplicar el modelo y el nombre de la tabla a crear. Este jar crea una nueva tabla dónde guarda la primera columna de la tabla original y la columna con la probabilidad estimada
 
-``` 
+```bash
 spark-submit \
 --class com.h2ospark.BinaryModels \
 --master yarn --num-executors 11 \

@@ -5,7 +5,7 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 group 'com.h2ospark'
-version '1.0.3-SNAPSHOT'
+version '1.0.4-SNAPSHOT'
 
 buildscript {
     repositories {

@@ -32,7 +32,10 @@ object BinaryModels {
     val tabla_origin = spark.table(tableIn)
 
     // cast all columns to string for h2o compatibility
-    val tabla = tabla_origin.select(tabla_origin.columns.map(c => col(c).cast(StringType)) : _*)
+    val tabla = tabla_origin.
+      select(tabla_origin.columns.map(c => col(c).cast(StringType)) : _*).
+      na.fill("SIN VALOR")
+
 
     // Import MOJO model
     val mojo = MojoModel.load(modelPath)

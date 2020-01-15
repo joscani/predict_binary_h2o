@@ -17,7 +17,7 @@ spark-submit \
 --executor-cores 5 \
 --driver-memory 2G \
 --executor-memory 10G  \
-binary_h2o-1.0.3-SNAPSHOT.jar  \
+binary_h2o-1.0.4-SNAPSHOT.jar  \
 path_mi_modelo_mojo.zip \
 esquema.tabla_to_predict esquema.tabla_a_crear
 ``` 
